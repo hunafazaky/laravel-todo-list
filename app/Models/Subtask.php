@@ -23,6 +23,9 @@ class Subtask extends Model
         'is_completed' => 'boolean',
     ];
 
+    /**
+     * @return BelongsTo<Task, $this>
+     */
     public function task(): BelongsTo
     {
         return $this->belongsTo(Task::class);

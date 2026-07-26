@@ -15,7 +15,6 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Contracts\PasskeyUser;
 use Laravel\Fortify\PasskeyAuthenticatable;
-// ADDITIONAL
 use Laravel\Fortify\TwoFactorAuthenticatable;
 
 /**
@@ -64,7 +63,7 @@ class User extends Authenticatable implements PasskeyUser
     }
 
     /**
-     * Get the user's id for tasks
+     * @return HasMany<Task, $this>
      */
     public function tasks(): HasMany
     {

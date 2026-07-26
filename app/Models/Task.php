@@ -27,11 +27,17 @@ class Task extends Model
         'due_date' => 'datetime',
     ];
 
+    /**
+     * @return BelongsTo<User, $this>
+     */
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * @return HasMany<Subtask, $this>
+     */
     public function subtasks(): HasMany
     {
         return $this->hasMany(Subtask::class);
